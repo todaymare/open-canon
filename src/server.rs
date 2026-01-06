@@ -1,19 +1,15 @@
-use std::{collections::HashMap, fmt::Write};
+use std::collections::HashMap;
 
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use sti::arena::Arena;
 use tiny_http::{Method, Response, Server};
-use xml::reader::XmlEvent;
 
 use crate::json::{self, Value};
 
 
 pub const PORT: u16 = 9876;
 pub const URL : &str = "http://localhost:9876";
-const OLLAMA_URL: &str = "http://localhost:11434";
-const PLANNER_MODEL: &str = "tool-planner";
-const COMPILER_MODEL: &str = "tool-compiler";
 
 pub const SYSTEM_PROMPT : &str = r#"
 The content inside <OPENCANON></OPENCANON> applies ONLY when using OpenCanon services.

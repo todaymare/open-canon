@@ -125,13 +125,6 @@ pub fn start_server() {
     let server = Server::http(&addr).expect("Failed to start server");
     
     println!("🚀 Tool Server running at http://{}", addr);
-    println!("   Endpoints:");
-    println!("     GET  /              - Current window info");
-    println!("     POST /use/          - Use a tool");
-    println!("     POST /prompt/       - Compile natural language to tool plan");
-    println!("   ");
-    println!("   Example:");
-    println!("     curl -X POST http://localhost:{}/prompt/ -d '{{\"prompt\": \"open the folder\"}}'", PORT);
     println!("   Press Ctrl+C to stop\n");
 
 
